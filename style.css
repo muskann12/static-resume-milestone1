@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #d7d7d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+  
+    width: 80%;
+    max-width: 1100px;
+    background: linear-gradient(to bottom right, rgb(15, 127, 165), rgb(255, 255, 255));
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    border-radius: 10px; 
+    margin: 20px auto; 
+    height: auto; 
+    max-height: auto; 
+    overflow-y: auto;
+}
+
+
+
+.left-section {
+    width: 40%; 
+    height: 100vh; 
+    background-color: #006d92;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-top-right-radius: 50% 100%; 
+    border-bottom-right-radius: 50% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: #000000;
+    box-shadow: #000000;
+}
+
+.profile-pic {
+    width: 170px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid transparent; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border-color 0.3s;
+    animation: glow 2s infinite alternate; 
+}
+
+@keyframes glow {
+    0% {
+        border-color: #0bc2ff;
+        box-shadow: 0 0 10px #006d92, 0 0 20px #006d92;
+    }
+    100% {
+        border-color: #00e1ff;
+        box-shadow: 0 0 20px #00e1ff, 0 0 40px #00e1ff;
+    }
+}
+
+.name {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #c6d5ff;
+
+}
+
+.title {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #c6d5ff;
+}
+
+.info p {
+    margin: 10px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #c6d5ff;
+}
+
+.right-section {
+    width: 60%; 
+    padding: 30px;
+
+}
+
+.glow-heading {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-underline-offset: inherit;
+    text-decoration: underline; 
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+
+.glow-heading:hover {
+    color: #c6d5ff;
+    text-shadow: 0 0 15px #1e3a8a;
+}
+
+.skills .skill {
+    margin-bottom: 25px;
+}
+
+.skill-progress {
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+}
+
+.skill-progress-inner {
+    height: 100%;
+    background-color: #21daff;
+    width: 0; /* Initial width for animation */
+    transition: width 1s ease-in-out; /* Smooth transition */
+}
+
+.skill-progress {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+}
+
+.skill-progress-inner {
+    height: 100%;
+    background-color: #027888; /* Color for progress bar */
+    width: 0; /* Start at 0 width for animation */
+    transition: width 1s ease-in-out; /* Smooth transition effect */
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        width: 90%; /* Make container width responsive */
+    }
+
+    .left-section {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Allow height to adjust */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .right-section {
+        width: 100%; /* Full width on smaller screens */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .profile-pic {
+        width: 100px; /* Smaller profile picture */
+        height: 100px; /* Smaller profile picture */
+    }
+
+    .name {
+        font-size: 24px; /* Smaller name font */
+    }
+
+    .title {
+        font-size: 18px; /* Smaller title font */
+    }
+
+    .glow-heading {
+        font-size: 24px; /* Smaller heading font */
+    }
+
+    .skills .skill {
+        margin-bottom: 15px; /* Reduce spacing between skills */
+    }
+
+    .skill-progress {
+        height: 8px; /* Smaller progress bar height */
+    }
+}
+
+@media (max-width: 350px) {
+    .container {
+        padding: 10px; /* Add padding for very small screens */
+    }
+
+    .profile-pic {
+        width: 80px; /* Even smaller profile picture */
+        height: 80px; /* Even smaller profile picture */
+    }
+
+    .name {
+        font-size: 20px; /* Further reduce name font size */
+    }
+
+    .title {
+        font-size: 16px; /* Further reduce title font size */
+    }
+
+    .glow-heading {
+        font-size: 20px; /* Further reduce heading font size */
+    }
+}
